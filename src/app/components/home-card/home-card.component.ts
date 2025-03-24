@@ -1,7 +1,8 @@
-import { Component, Input, Output, EventEmitter } from "@angular/core";
+import { Component, Input, Output, EventEmitter, inject } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { LucideAngularModule, WavesLadder, Bed, Bath, MapPin, Heart } from "lucide-angular";
 import { Home } from "../../models/home.type";
+import { HomeService } from "../../services/home.service";
 
 
 
@@ -20,6 +21,8 @@ export class HomeCardComponent {
   @Input() home!: Home;
   @Output() toggleFavorite = new EventEmitter<number>();
 
+  homeService = inject(HomeService);
+
   readonly WavesLadder = WavesLadder;
   readonly Bed = Bed;
   readonly Bath = Bath;
@@ -30,8 +33,9 @@ export class HomeCardComponent {
    * Emit the home id when favorite is toggled
    */
   onFavoriteClick(): void {
-    if (this.home.id) {
-      this.toggleFavorite.emit(this.home.id);
+    if (!this.home.id) {
+      return;
     }
+    this.homeService.toggleFavorite(this.home.id);
   }
 }
