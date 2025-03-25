@@ -1,5 +1,6 @@
 <div class="w-full mx-auto">
   <h2 class="text-3xl font-bold mb-6">Homes</h2>
+
   @if (isLoading()) {
   <div class="flex justify-center items-center min-h-[200px]">
     <p class="text-gray-500">Loading homes...</p>
@@ -14,10 +15,9 @@
     <app-home-card [home]="home"></app-home-card>
     } @empty {
     <p class="text-gray-500 col-span-3 text-center py-12">
-      No homes found. Please check back later.
+      No homes found matching your criteria. Try adjusting your filters.
     </p>
     }
   </div>
   }
-  <app-pagination></app-pagination>
 </div>

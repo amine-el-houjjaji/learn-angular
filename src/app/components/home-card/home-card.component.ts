@@ -3,6 +3,7 @@ import { CommonModule } from "@angular/common";
 import { LucideAngularModule, WavesLadder, Bed, Bath, MapPin, Heart } from "lucide-angular";
 import { Home } from "../../models/home.type";
 import { HomeService } from "../../services/home.service";
+import { RouterLink } from "@angular/router";
 
 
 
@@ -13,7 +14,7 @@ import { HomeService } from "../../services/home.service";
 @Component({
   selector: "app-home-card",
   standalone: true,
-  imports: [CommonModule, LucideAngularModule],
+  imports: [CommonModule, LucideAngularModule, RouterLink],
   templateUrl: "./home-card.component.html",
   styleUrls: ["./home-card.component.css"],
 })
@@ -32,10 +33,7 @@ export class HomeCardComponent {
   /**
    * Emit the home id when favorite is toggled
    */
-  onFavoriteClick(): void {
-    if (!this.home.id) {
-      return;
-    }
-    this.homeService.toggleFavorite(this.home.id);
+  onFavoriteClick() {
+    this.homeService.toggleFavorite(this.home);
   }
 }

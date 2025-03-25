@@ -1,15 +1,23 @@
-import { Routes } from '@angular/router';
-import { HomeCardComponent } from './components/home-card/home-card.component';
-import { HomeListComponent } from './home-list/home-list.component';
+import { Routes } from "@angular/router";
+import { HomeListComponent } from "./home-list/home-list.component";
+import { HomeFormComponent } from "./home-form/home-form.component";
 
 export const routes: Routes = [
   {
-    path: '',
-    redirectTo: 'homes',
-    pathMatch: 'full',
+    path: "homes",
+    component: HomeListComponent,
   },
   {
-    path: 'homes',
-    component: HomeListComponent,
-  }
+    path: "homes/new",
+    component: HomeFormComponent,
+  },
+  {
+    path: "homes/:id",
+    component: HomeFormComponent,
+  },
+  {
+    path: "",
+    redirectTo: "homes",
+    pathMatch: "full",
+  },
 ];

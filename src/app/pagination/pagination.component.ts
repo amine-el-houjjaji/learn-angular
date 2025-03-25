@@ -11,7 +11,7 @@ export class PaginationComponent {
   homeService = inject(HomeService);
   currentPage = 1;
   totalPages = this.homeService.totalPages.asReadonly();
-  totalHomes = this.homeService.totalHomes.asReadonly();
+  totalHomes = this.homeService.totalItems.asReadonly();
   pages = computed(() => {
     return Array.from({ length: this.totalPages() }, (_, i) => i + 1);
   });

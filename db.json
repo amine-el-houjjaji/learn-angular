@@ -119,6 +119,16 @@
       "bathrooms": 2,
       "hasPool": false,
       "picture": "https://images.unsplash.com/photo-1576941089067-2de3c901e126?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1476&q=80"
+    },
+    {
+      "id": "47f3",
+      "title": "aaaaaa",
+      "description": "aaaaaaaaaaa",
+      "city": "New York",
+      "rooms": 1,
+      "bathrooms": 1,
+      "hasPool": true,
+      "picture": "https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     }
   ]
 }
